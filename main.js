@@ -19,7 +19,7 @@ function ready() {
 		setTimeout(ready, 10000);
 	} else {
 		bots[0].chat("Ready!");
-		bots[0].on('spawn',chat);
+		bots[0].on('chat',chat);
 	}
 }
 
