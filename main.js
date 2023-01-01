@@ -19,14 +19,16 @@ function ready() {
 		setTimeout(ready, 10000);
 	} else {
 		bots[0].chat("Ready!");
-		bots[0].on('chat',chat);
+		bot.on('chat', (username, message) => {
+				if (message == "축하해") {
+					do {
+						bots[i].chat("Happy birthday!"+username);
+						i += 1;
+					} while (i < 5);
+				} else return;
+			}
+		)
 	}
 }
 
-function chat(username) {
-	do {
-		bots[i].chat("Happy birthday!"+username)
-		i += 1;
-	  } while (i < 5);
-}
 ready();
